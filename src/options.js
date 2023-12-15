@@ -2,7 +2,7 @@
 // Saves options to chrome.storage
 function saveOptions() {
     var obsidianVaultName = document.getElementById('obsidian_vault_name').value;
-    var obsidianNoteName = document.getElementById('obsidian_note_name').value;
+    var obsidianFile = document.getElementById('obsidian_note_name').value;
     var obsidianNoteFormat = document.getElementById('obsidian_note_format').value;
     var selectAsMarkdown = document.getElementById('select_as_markdown').checked;
     var clipAsNewNote = document.getElementById('clip_as_new_note').checked;
@@ -12,7 +12,7 @@ function saveOptions() {
 
     chrome.storage.sync.set({
         obsidianVaultName: obsidianVaultName,
-        obsidianNoteName: obsidianNoteName,
+        obsidianFile: obsidianFile,
         selectAsMarkdown, selectAsMarkdown,
         obsidianNoteFormat, obsidianNoteFormat,
         clipAsNewNote: clipAsNewNote,
@@ -34,7 +34,7 @@ function saveOptions() {
 function restoreOptions() {
     chrome.storage.sync.get({
         obsidianVaultName: 'obsidian',
-        obsidianNoteName: 'Bookmarks/{title}',
+        obsidianFile: 'Bookmarks/{title}',
         selectAsMarkdown: false,
         obsidianNoteFormat: `{clip}
 
@@ -47,7 +47,7 @@ Clipped from [{title}]({url}) at {date}`,
         timeFormat: "HH:mm:ss",
     }, function(options) {
         document.getElementById('obsidian_vault_name').value = options.obsidianVaultName;
-        document.getElementById('obsidian_note_name').value = options.obsidianNoteName;
+        document.getElementById('obsidian_note_name').value = options.obsidianFile;
         document.getElementById('obsidian_note_format').value = options.obsidianNoteFormat;
         document.getElementById('select_as_markdown').checked = options.selectAsMarkdown;
         document.getElementById('clip_as_new_note').checked = options.clipAsNewNote;

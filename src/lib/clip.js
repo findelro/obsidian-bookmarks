@@ -12,7 +12,7 @@ export const create = async (testing=false) => {
         obsidianVaultName: 'Obsidian',
         selectAsMarkdown: false,
         obsidianNoteFormat: defaultNoteFormat,
-        obsidianNoteName: "Chrome Clippings",
+        obsidianFile: "Chrome Clippings",
         clipAsNewNote: true,
         dateFormat: "YYYY-MM-DD",
         datetimeFormat: "YYYY-MM-DD HH:mm:ss",
@@ -95,21 +95,21 @@ export const create = async (testing=false) => {
 
     // replace the placeholder in the title, taking into account invalid note names and removing special 
     // chars like \/:#^\[\]|?  that result in no note being created... * " \ / < > : | ?
-    let noteName = clippingOptions.obsidianNoteName
-    noteName = noteName.replace(/{date}/g, date.replace(/[\/":#^\[\]|?<>]/g, ''))
-    noteName = noteName.replace(/{day}/g, day.replace(/[\/":#^\[\]|?<>]/g, ''))
-    noteName = noteName.replace(/{month}/g, month.replace(/[\/":#^\[\]|?<>]/g, ''))
-    noteName = noteName.replace(/{year}/g, year.replace(/[\/":#^\[\]|?<>]/g, ''))
-    noteName = noteName.replace(/{url}/g, url.replace(/[\/":#^\[\]|?<>]/g, ''))
-    noteName = noteName.replace(/{title}/g, title.replace(/[\/":#^\[\]|?<>]/g, ''))
-    noteName = noteName.replace(/{zettel}/g, zettel.replace(/[\/":#^\[\]|?<>]/g, ''))
-    noteName = noteName.replace(/{datetime}/g, datetime.replace(/[\/":#^\[\]|?<>]/g, ''))
-    noteName = noteName.replace(/{time}/g, time.replace(/[\/":#^\[\]|?<>]/g, ''))
+    let file = clippingOptions.obsidianFile
+    file = file.replace(/{date}/g, date.replace(/[\/":#^\[\]|?<>]/g, ''))
+    file = file.replace(/{day}/g, day.replace(/[\/":#^\[\]|?<>]/g, ''))
+    file = file.replace(/{month}/g, month.replace(/[\/":#^\[\]|?<>]/g, ''))
+    file = file.replace(/{year}/g, year.replace(/[\/":#^\[\]|?<>]/g, ''))
+    file = file.replace(/{url}/g, url.replace(/[\/":#^\[\]|?<>]/g, ''))
+    file = file.replace(/{title}/g, title.replace(/[\/":#^\[\]|?<>]/g, '').substring(0, 240))
+    file = file.replace(/{zettel}/g, zettel.replace(/[\/":#^\[\]|?<>]/g, ''))
+    file = file.replace(/{datetime}/g, datetime.replace(/[\/":#^\[\]|?<>]/g, ''))
+    file = file.replace(/{time}/g, time.replace(/[\/":#^\[\]|?<>]/g, ''))
     
     // Send a clipping messsage
     let data = {
         'testing': testing,
-        'noteName': noteName,
+        'file': file,
         'note': note,
         'vault': clippingOptions.obsidianVaultName,
         'new': clippingOptions.clipAsNewNote
