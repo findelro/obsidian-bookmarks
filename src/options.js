@@ -38,9 +38,9 @@ function restoreOptions() {
         selectAsMarkdown: false,
         obsidianNoteFormat: `{clip}
 
-    {og:image}
-        
-    Clipped from [{title}]({url}) at {date}`,
+{og:image}
+
+Clipped from [{title}]({url}) at {date}`,
         clipAsNewNote: true,
         datetimeFormat: "YYYY-MM-DD HH:mm:ss",
         dateFormat: "YYYY-MM-DD",
@@ -61,7 +61,7 @@ function resetFormat() {
     document.getElementById('obsidian_note_format').value = `{clip}
 
 {og:image}
-    
+
 Clipped from [{title}]({url}) at {date}`
 }
 

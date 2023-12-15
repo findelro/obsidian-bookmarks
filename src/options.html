@@ -38,7 +38,7 @@
             
             <div class="form-group">
                 <label for="obsidian_note_name">Note to clip to <small>(You can specify the a folder as well, like `notes/{title}-{date}`)</small></label>
-                <input id="obsidian_note_name" name="obsidian_note_name" type="text" placeholder="clips/{zettel}">
+                <input id="obsidian_note_name" name="obsidian_note_name" type="text" placeholder="Bookmarks/{title}">
                 <small class="form-text grey">Use {date}, {datetime}, {year}, {month}, {day}, {time}, {title} and {zettel} as placeholders </small>
             </div>
 
@@ -47,9 +47,9 @@
                 <label id="reset">(reset)</label>
                 <textarea class="form-control" rows="6" id="obsidian_note_format" name="obsidian_note_format" type="text">{clip}
 
-                    {og:image}
-                    
-                    Clipped from [{title}]({url}) at {date}</textarea>
+{og:image}
+
+Clipped from [{title}]({url}) at {date}</textarea>
                 <small class="form-text grey">Use {clip}, {date}, {datetime}, {year}, {month}, {day}, {time}, {title}, {zettel}, {og:image} and {url} as placeholders </small>
             </div>
 
@@ -82,6 +82,5 @@
     <script src="lib/moment.js"></script>    
     <script src="options.js"></script>
 
-    <a target="_blank" rel="noopener" class="by-jplattel" href="https://jplattel.nl/"><img src="https://jplattel.nl/img/joostplattel_small_cropped.png" /><p>by jplattel</p></a>
 </body>
 </html>
