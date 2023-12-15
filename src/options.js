@@ -34,11 +34,13 @@ function saveOptions() {
 function restoreOptions() {
     chrome.storage.sync.get({
         obsidianVaultName: 'obsidian',
-        obsidianNoteName: 'Chrome Clippings',
+        obsidianNoteName: 'Bookmarks/{title}',
         selectAsMarkdown: false,
-        obsidianNoteFormat: `> {clip},
+        obsidianNoteFormat: `{clip}
 
-Clipped from [{title}]({url}) at {date}.`,
+    {og:image}
+        
+    Clipped from [{title}]({url}) at {date}`,
         clipAsNewNote: true,
         datetimeFormat: "YYYY-MM-DD HH:mm:ss",
         dateFormat: "YYYY-MM-DD",
@@ -56,8 +58,11 @@ Clipped from [{title}]({url}) at {date}.`,
 }
 
 function resetFormat() {
-    document.getElementById('obsidian_note_format').value = `> {clip}
-Clipped from [{title}]({url}) at {date}.`
+    document.getElementById('obsidian_note_format').value = `{clip}
+
+{og:image}
+    
+Clipped from [{title}]({url}) at {date}`
 }
 
 async function testClipping() {
