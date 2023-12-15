@@ -3,7 +3,7 @@
     "version": "0.5.0",
     "manifest_version": 3,
     "description": "A small chrome plugin that let's you easily clip things to Obsidian",
-    "homepage_url": "https://github.com/findelro/obsidian-clipper",
+    "homepage_url": "https://github.com/findelro/obsidian-bookmarks",
     "background": {
         "service_worker": "background.js",
         "type": "module"
@@ -22,7 +22,8 @@
         "scripting"
     ],
     "host_permissions": [
-        "https://findelro.github.io/obsidian-clipper/clip.html"
+        "https://findelro.github.io/obsidian-bookmarks/clip.html",
+        "https://clipper.brainhold.com/obsidian-bookmarks/clip.html"
     ],
     "web_accessible_resources": [
         {
