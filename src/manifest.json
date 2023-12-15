@@ -1,6 +1,6 @@
 {
-    "name": "Obsidian Clipper",
-    "version": "0.5.0",
+    "name": "Obsidian Bookmarks",
+    "version": "0.5.1",
     "manifest_version": 3,
     "description": "A small chrome plugin that let's you easily clip things to Obsidian",
     "homepage_url": "https://github.com/findelro/obsidian-bookmarks",

@@ -43,7 +43,7 @@ export const create = async (testing=false) => {
     
     // If we're testing..
     if (testing) {
-        selection = "This is a test clipping from the Obsidian Clipper"
+        selection = "This is a test clipping from the Obsidian Bookmarks"
     } else if (clippingOptions.selectAsMarkdown) {
         // Get the HTML selected
         let sel = rangy.getSelection().toHtml();
